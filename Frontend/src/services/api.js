@@ -1,6 +1,6 @@
-import { BOOKS, CATEGORIES_DATA, USER_PROFILE } from '../data/books';
+import { BOOKS, CATEGORIES_DATA, USER_PROFILE } from '../data/books.js';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
+const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE_URL) || (typeof process !== 'undefined' && process.env?.VITE_API_BASE_URL) || '/api';
 
 /**
  * Generic request helper with error handling & graceful mock fallback
